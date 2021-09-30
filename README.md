@@ -7,7 +7,7 @@ This scheduler helps store tasks for your daily schedule. The visual interface h
 
 ## Preview
 Here is a mock-up of how the page looks and functions.
-<img src=""></img>
+<img src="assets\octocat-pix.png" />
 
 ## Created With
 * JavaScript
