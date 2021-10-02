@@ -7,7 +7,7 @@ This scheduler helps store tasks for your daily schedule. The visual interface h
 
 ## Preview
 Here is a mock-up of how the page looks and functions.
-<img src="">
+<img src="assets\work-sched.gif"></img>
 
 ## Created With
 * JavaScript
