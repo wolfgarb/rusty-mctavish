@@ -1,7 +1,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
-    line-height: 1;
+    line-height: 2;
   }
   
   textarea{
@@ -69,4 +69,3 @@ body {
     font-size: 20px;
     transition: all .3s ease-in-out;
   }
-  
