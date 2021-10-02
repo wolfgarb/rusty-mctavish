@@ -3,9 +3,10 @@ window.setInterval(function () {
   $("#currentDay").text(moment().format("ddd MM/DD h:mm:ss a"));
 }, 1000);
 
-// current time formatted to just the hour
-var currentTime = moment().format("HH");
+// current time formatted to match time slots
+var currentTime = moment().format("HH") + ":00";
 
+var userInput = [];
 // range of times, from 7a to 10p
 var timeSlots = [
   "07:00",
@@ -31,6 +32,7 @@ var timeSlots = [
 var domContainer = document.querySelector("#timeslot-container");
 
 var displayTimes = function () {
+  getTasks();
   // the for loop will go over my array of times to display each one
   for (var i = 0; i < timeSlots.length; i++) {
     // set ID based on number in index
@@ -40,14 +42,11 @@ var displayTimes = function () {
     //every element that is created will have classes attributed
     taskRow.classList = "row time-block";
     // every element will be assigned an ID based off the position in the index
-    // for example, the first time slot will have an index of 0, and all children inside the parent taskRow will have a corresponding ID
-    // id
     taskRow.id = timeSlots.indexOf(timeSlots[i]);
 
     // create element to hold hourly time slot
     var timeSlot = document.createElement("h4");
     timeSlot.classList = "hour";
-    // id
     timeSlot.id = timeSlots.indexOf(timeSlots[i]);
     timeSlot.textContent = timeSlots[i];
 
@@ -57,14 +56,17 @@ var displayTimes = function () {
     // create taskInput element for tasks to go in, then append to the taskRow
     var taskInput = document.createElement("input");
     taskInput.classList = "time-block col-8";
-    // id
     taskInput.id = "input" + timeSlots.indexOf(timeSlots[i]);
+
+    // if localstorage value is present, set value
+    if (userInput[i]) {
+      taskInput.value = userInput[i];
+    }
     taskRow.appendChild(taskInput);
 
     // create save button and append to taskRow
     var saveBtn = document.createElement("button");
     saveBtn.classList = "saveBtn";
-    // id
     saveBtn.id = "btn" + timeSlots.indexOf(timeSlots[i]);
     saveBtn.innerHTML = "<i class='far fa-save'></i>";
     taskRow.appendChild(saveBtn);
@@ -72,7 +74,6 @@ var displayTimes = function () {
     // finally, append all created elements to the main container
     domContainer.appendChild(taskRow);
 
-    console.log(currentTime);
     // if statements to set color status
     // present
     if (currentTime === timeSlots[i]) {
@@ -91,32 +92,29 @@ var displayTimes = function () {
 
 displayTimes();
 
-// empty obj to hold string of tasks.
-// var userInput = {}
 // listener for which button is clicked to save corresponding task
 $("button").on("click", function () {
   // variable to hold the ID of button click
-  var btnID = this.id;
-  console.log(btnID);
-  var inputForms = document.querySelectorAll("input");
-  console.log(inputForms.value);
-  // for (var i = 0; i < timeSlots.length; i++) {
-  //     var inputID =
-  // }
+  // var btnID = this.id;
+  // temporary empty array for tasks to go into
+  var tempTask = [];
+  // loop through again to get values of inputs by index, push into empty array
+  for (var i = 0; i < timeSlots.length; i++) {
+    tempTask.push(document.getElementsByTagName("input")[i].value);
+  }
+  // update global array with 'tempTask'
+  userInput = tempTask;
+  localStorage.setItem("tasks", JSON.stringify(userInput));
 });
 
-// get the value of the input with corresponding ID
+function getTasks() {
+  // if there are tasks present, get from local storage
+  if (JSON.parse(localStorage.getItem("tasks"))) {
+    userInput = JSON.parse(localStorage.getItem("tasks"));
+  }
+}
 
-// set to localstorage
-
-// function to add color to tasks based on past/present/future
-// function setStatus() {
-//     console.log(currentTime);
-//     for (var i = 0; i < timeSlots.length; i++) {
-//         // present
-
-// }
-
-// setStatus();
-
-// var timeSlots = ["7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", "9 pm", "10pm"]
+// console.log({
+//   userInput,
+//   localStorage: JSON.parse(localStorage.getItem("tasks")),
+// });
