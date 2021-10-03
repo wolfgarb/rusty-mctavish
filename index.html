@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"> 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets\style.css" />
   <title>Work Day Scheduler</title>
@@ -17,20 +19,22 @@
   <header class="jumbotron">
     <h1 class="display-3">Work Day Scheduler</h1>
     <p class="lead">A simple calendar app for scheduling your work day</p>
+    <div id="clock" ><i class="far fa-clock"></i></div>
     <p>Current Time (EST):</p>
     <p id="currentDay" class="lead"></p>
   </header>
 
 <main class="container">
-  <div id="sub-heading" class="container row w-100 justify-content-center"> 
-Simply type your task into the box, and hit the save icon.
+  <div> 
+<p class="lead">Simply type your task into the box then hit the save icon.</p>
   </div>
+
     <div id="timeslot-container" class="container justify-content-center">
   <!-- div container blank space for dynamically created time slots -->
     </div>
 
   <footer class="container row justify-content-center">
-    Made by wolfgarb
+    <h4>Made by <a href="https://github.com/wolfgarb" target="_blank">wolfgarb <i class="fas fa-external-link-alt"></i></a></h4>
   </footer>
 </main>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

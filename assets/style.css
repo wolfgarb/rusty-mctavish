@@ -1,24 +1,25 @@
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    line-height: 2;
+    background-color: #B1BBA7;
+    font-weight: 500;
   }
   
   textarea{
     background: transparent;
     border: none;
     resize: none;
-    color: #000000;
-    border-left: 1px solid black;
+    color: #1e2019;
+    border-left: 1px solid #1e2019;
     padding: 10px;
   }
   
   .jumbotron {
     text-align: center;
     background-color: transparent;
-    color: black;
+    color: #1e2019;
     border-radius: 0;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #1e2019;
   }
   
   .description{
@@ -29,43 +30,87 @@ body {
     text-align: center;
     border-radius: 15px;
   }
+
+  main {
+    text-align: center;
+  }
   
   .row {
     white-space: pre-wrap;
     height: 80px;
-    border-top: 1px solid white;;
+    padding-bottom: 5px;
   }
   
   .hour {
-    background-color: #ffffff;
-    color: #000000;
-    border-top: 1px dashed #000000;
+    color: #1e2019;
+    font-weight: 500;
+    padding: 25px 5px 0 0;
   }
   
   .past {
-    background-color: #d3d3d3;
-    color: white;
+    background-color: #5F7647;
+    color: #393e41;
   }
   
   .present {
-    background-color: #ff6961;
-    color: white;
+    background-color: #ffbd52;
+    color: #1e2019;
   }
   
   .future {
-    background-color: #77dd77;
-    color: white;
+    background-color: #99C36D;
+    color: #1e2019;
   }
   
   .saveBtn {
-    border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06AED5;
-    color: white;
+    color: #1e2019;
+    background-color: #B1BBA7;
+    border: none;
+    font-size: 20px;
   }
   
   .saveBtn i:hover {
-    font-size: 20px;
+    font-size: 26px;
     transition: all .3s ease-in-out;
+    color: #FFFDD0;
+  }
+
+  .present:hover {
+    transition: all .3s ease-in-out;
+    background-color: #FFFDD0;
+  }
+
+  .future:hover {
+    background-color: #65a343;
+    transition: all .3s ease-in-out;
+  }
+
+  .past:hover {
+    background-color: #7e8f70;
+    transition: all .3s ease-in-out;
+  }
+
+  #currentDay {
+    color: #FFFDD0;
+    font-weight: 600;
+    font-size: x-large;
+  }
+
+  #clock {
+    font-size: 26px;
+  }
+
+  footer {
+    padding-top: 20px;
+  }
+
+  a {
+    color: #1e2019;
+    text-decoration: none;
+  }
+
+  a:hover {
+    transition: all .3s ease-in-out;
+    color: #FFFDD0;
+    text-decoration: none;
   }
