@@ -40,7 +40,7 @@ var displayTimes = function () {
     //create container for each row that will hold the time slot, the input and the save
     var taskRow = document.createElement("div");
     //every element that is created will have classes attributed
-    taskRow.classList = "row time-block";
+    taskRow.classList = "row time-block justify-content-center";
     // every element will be assigned an ID based off the position in the index
     taskRow.id = timeSlots.indexOf(timeSlots[i]);
 
@@ -55,7 +55,7 @@ var displayTimes = function () {
 
     // create taskInput element for tasks to go in, then append to the taskRow
     var taskInput = document.createElement("input");
-    taskInput.classList = "time-block col-8";
+    taskInput.classList = "time-block clearable";
     taskInput.id = "input" + timeSlots.indexOf(timeSlots[i]);
 
     // if localstorage value is present, set value
@@ -113,6 +113,9 @@ function getTasks() {
     userInput = JSON.parse(localStorage.getItem("tasks"));
   }
 }
+
+// make inputs clearable ?
+
 
 // console.log({
 //   userInput,
