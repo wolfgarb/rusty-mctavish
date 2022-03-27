@@ -20,7 +20,7 @@ Given a foundation of HTML and CSS, the ```.js``` file was created on my own!
 As a student with a busy schedule and a full-time job, this application will prove to be very useful! I wanted to flex my jQuery muscles a bit more and become more confident writing ```.js``` on my own. My priority is always functionality, but I wanted to have fun with this project and make it visually pleasing as well. Feedback and advice to improve my code is always welcome, thanks for looking!
 
 ## Website
-https://wolfgarb.github.io/daily-planner/
+https://wolfskillobyte.github.io/daily-planner/
 
 ## Contribution
 Made by wolfgarb
