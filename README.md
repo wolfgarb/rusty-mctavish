@@ -23,4 +23,4 @@ As a student with a busy schedule and a full-time job, this application will pro
 https://wolfskillobyte.github.io/daily-planner/
 
 ## Contribution
-Made by wolfgarb
+Made by wolfskillobyte
